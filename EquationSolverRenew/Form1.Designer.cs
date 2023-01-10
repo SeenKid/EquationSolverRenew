@@ -172,6 +172,7 @@
             this.reponsebox.TabIndex = 9;
             this.reponsebox.Text = "Réponse";
             this.reponsebox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reponsebox.TextChanged += new System.EventHandler(this.reponsebox_TextChanged);
             // 
             // button2
             // 

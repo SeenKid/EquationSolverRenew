@@ -15,11 +15,11 @@ namespace EquationSolverRenew
         {
             InitializeComponent();
             this.Text = String.Format("À propos de {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.labelProductName.Text = "Equation Solver 2.0.4";
+            this.labelVersion.Text = String.Format("Version 2.0.4", AssemblyVersion);
+            this.labelCopyright.Text = "Yann Berlemont (YANNBERL), MI-IN CG 2";
+            this.labelCompanyName.Text = "EPTM - Mathématiques";
+            this.textBoxDescription.Text = "EquationSolver est un projet ayant été réalisé dans le cadre du cours de mathématiques d'ALAALB. \r\n\r\nCe logiciel vous permet de résoudre vos équations à deux inconnues facilement. \r\n\r\nLe projet est disponible en OpenSource sur github (voir bouton github).";
         }
 
         #region Accesseurs d'attribut de l'assembly
@@ -105,6 +105,12 @@ namespace EquationSolverRenew
         private void labelProductName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            AboutBox1 form = new AboutBox1();
+            form.Hide();
         }
     }
 }

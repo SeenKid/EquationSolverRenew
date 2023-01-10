@@ -163,12 +163,12 @@ namespace EquationSolverRenew
                 if (string.IsNullOrEmpty(reponsebox.Text))
                 {
                     reponsebox.Clear();
-                    reponsebox.Text += "X= " + String.Format("{0:#,0.00}", calculX) + ";" + " Y= " + String.Format("{0:#,0.00}", calculY);
+                    reponsebox.Text += "X= " + String.Format("{0:#,0.00}", calculX) + ";" + "  " + " Y= " + String.Format("{0:#,0.00}", calculY);
                 }
                 else
                 {
                     reponsebox.Clear();
-                    reponsebox.Text += "\r\nX= " + String.Format("{0:#,0.00}", calculX) + ";" + " Y= " + String.Format("{0:#,0.00}", calculY);
+                    reponsebox.Text += "\r\nX= " + String.Format("{0:#,0.00}", calculX) + ";" + "  " + " Y= " + String.Format("{0:#,0.00}", calculY);
                 }
             }
         }
@@ -221,7 +221,19 @@ namespace EquationSolverRenew
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/SeenKid/EquationSolverRenew");
+            try
+            {
+                var p = new Process();
+                p.StartInfo = new ProcessStartInfo(@"https://github.com/SeenKid/EquationSolverRenew")
+                {
+                    UseShellExecute = true
+                };
+                p.Start();
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -237,9 +249,14 @@ namespace EquationSolverRenew
             }
             catch (Exception exc)
             {
-                throw;
+                    MessageBox.Show("Le fichier PDF n'est pas dans le même dossier que l'application.");
             }
             
+        }
+
+        private void reponsebox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
