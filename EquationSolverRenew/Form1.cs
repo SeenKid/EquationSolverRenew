@@ -221,7 +221,7 @@ namespace EquationSolverRenew
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/SeenKid/EquationSolverV3");
+            Process.Start("https://github.com/SeenKid/EquationSolverRenew");
         }
 
         private void button1_Click(object sender, EventArgs e)
